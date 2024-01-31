@@ -13,8 +13,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-VOLUME /app/node_modules
-
 # Expose port 8080
 EXPOSE 8080
 
