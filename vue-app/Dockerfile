@@ -13,9 +13,10 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+VOLUME /app/node_modules
+
 # Expose port 8080
 EXPOSE 8080
 
 # Define the command to run your app
-# CMD ["npm", "run", "serve"]
-CMD [ -d "node_modules" ] && npm run serve
+CMD ["npm", "run", "serve"]
