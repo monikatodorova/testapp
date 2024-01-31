@@ -5,7 +5,7 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY ./package*.json ./
 
 # Install app dependencies
 RUN npm install
@@ -17,4 +17,5 @@ COPY . .
 EXPOSE 8080
 
 # Define the command to run your app
-CMD ["npm", "run", "serve"]
+# CMD ["npm", "run", "serve"]
+CMD [ -d "node_modules" ] && npm run serve
